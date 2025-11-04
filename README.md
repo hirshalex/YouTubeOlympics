@@ -1,5 +1,6 @@
 # YouTubeOlympics
 
+This project explores whether Olympic events and country-level performance influence the popularity of sports-related YouTube videos.
 
 ## Datasets (sourced from Kaggle)
 
