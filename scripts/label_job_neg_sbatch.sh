@@ -15,8 +15,8 @@ cd /hpc/home/ah702/work_ah702/YouTubeOlympics
 export PYTHONUNBUFFERED=1
 python -u scripts/label_with_llm.py \
   --input data/processed/sampled_neg.parquet \
-  --output outputs/labels_neg.csv \
-  --model Qwen/Qwen2.5-7B-Instruct \
+  --output data/processed/labels_neg.csv \
+  --model Qwen/Qwen2-1.5B-Instruct \
   --maxrows 3000 \
   --prompt_file scripts/labeling_prompt_examples.md \
   --batch_size 1 \

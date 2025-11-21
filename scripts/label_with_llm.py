@@ -20,7 +20,7 @@ import torch
 parser = argparse.ArgumentParser()
 parser.add_argument("--input", required=True, help="parquet input (can be large)")
 parser.add_argument("--output", required=True, help="csv output (appended incrementally)")
-parser.add_argument("--model", default="Qwen/Qwen2.5-7B-Instruct", help="HF model id")
+parser.add_argument("--model", default="Qwen/Qwen2-1.5B-Instruct", help="HF model id")
 parser.add_argument("--prompt_file", default="scripts/labeling_prompt_examples.md")
 parser.add_argument("--maxrows", type=int, default=None)
 parser.add_argument("--start", type=int, default=0, help="skip this many rows (sharding)")
@@ -57,7 +57,7 @@ try:
     # try GPU + quant (bitsandbytes) first
     try:
         model = AutoModelForCausalLM.from_pretrained(
-            args.model, trust_remote_code=True, device_map="cpu",  torch_dtype=torch.float16,  low_cpu_mem_usage=True
+            args.model, trust_remote_code=True, device_map="auto",  torch_dtype=torch.float16,  low_cpu_mem_usage=True
         )
         # pipeline: device set to 0 if CUDA visible; else pipeline will use the model's device_map
         pipe = TextGenerationPipeline(model=model, tokenizer=tokenizer)
@@ -85,20 +85,30 @@ VALID_LABELS = {"olympic","other_sport","non_sport"}
 def parse_response(resp_text):
     label = "non_sport"
     reason = ""
-    for line in resp_text.splitlines():
+    
+    # Split and reverse to find the ACTUAL answer (not the examples)
+    lines = resp_text.strip().split('\n')
+    
+    # Search from bottom up for the last Label: line (the actual answer)
+    for line in reversed(lines):
         line = line.strip()
         if line.lower().startswith("label:"):
-            parts = line.split(":",1)
+            parts = line.split(":", 1)
             if len(parts) > 1:
                 candidate = parts[1].strip().split()[0].lower()
                 if candidate in VALID_LABELS:
                     label = candidate
-            break
-    # Reason line (optional)
-    for line in resp_text.splitlines():
-        if line.lower().strip().startswith("reason:"):
-            reason = line.split(":",1)[1].strip()
-            break
+                    break
+    
+    # Search from bottom up for the last Reason: line  
+    for line in reversed(lines):
+        line = line.strip()
+        if line.lower().startswith("reason:"):
+            parts = line.split(":", 1)
+            if len(parts) > 1:
+                reason = parts[1].strip()
+                break
+                
     return label, reason, resp_text
 
 # streaming read from parquet dataset

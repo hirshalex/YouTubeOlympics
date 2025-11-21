@@ -18,7 +18,7 @@ mkdir -p logs outputs
 export PYTHONUNBUFFERED=1
 python -u scripts/label_with_llm.py \
   --input data/processed/sampled_pos.parquet \
-  --output outputs/labels_pos.csv \
+  --output data/processed/labels_pos.csv \
   --model Qwen/Qwen2.5-7B-Instruct \
   --maxrows 3000 \
   --prompt_file scripts/labeling_prompt_examples.md \
