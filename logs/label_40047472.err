@@ -1,0 +1,54 @@
+ERROR: Unable to locate a modulefile for 'anaconda'
+/var/spool/slurmd/job40047472/slurm_script: line 14: /hpc/home/ah702/miniconda3/etc/profile.d/conda.sh: No such file or directory
+Error processing line 1 of /work/ah702/miniconda3/lib/python3.13/site-packages/distutils-precedence.pth:
+
+  Traceback (most recent call last):
+    File "<frozen site>", line 207, in addpackage
+    File "<string>", line 1, in <module>
+  AttributeError: module '_distutils_hack' has no attribute 'add_shim'
+
+Remainder of file ignored
+Traceback (most recent call last):
+  File "/work/ah702/miniconda3/lib/python3.13/site-packages/conda/exception_handler.py", line 28, in __call__
+    return func(*args, **kwargs)
+  File "/work/ah702/miniconda3/lib/python3.13/site-packages/conda/cli/main.py", line 28, in main_subshell
+    from ..base.context import context
+  File "/work/ah702/miniconda3/lib/python3.13/site-packages/conda/base/context.py", line 35, in <module>
+    from ..common.configuration import (
+    ...<8 lines>...
+    )
+  File "/work/ah702/miniconda3/lib/python3.13/site-packages/conda/common/configuration.py", line 34, in <module>
+    from boltons.setutils import IndexedSet
+ModuleNotFoundError: No module named 'boltons.setutils'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/work/ah702/miniconda3/condabin/conda", line 13, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/work/ah702/miniconda3/lib/python3.13/site-packages/conda/cli/main.py", line 105, in main
+    return conda_exception_handler(main, *args, **kwargs)
+  File "/work/ah702/miniconda3/lib/python3.13/site-packages/conda/exception_handler.py", line 409, in conda_exception_handler
+    return_value = exception_handler(func, *args, **kwargs)
+  File "/work/ah702/miniconda3/lib/python3.13/site-packages/conda/exception_handler.py", line 31, in __call__
+    return self.handle_exception(exc_val, exc_tb)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/work/ah702/miniconda3/lib/python3.13/site-packages/conda/exception_handler.py", line 62, in handle_exception
+    from .exceptions import (
+    ...<3 lines>...
+    )
+  File "/work/ah702/miniconda3/lib/python3.13/site-packages/conda/exceptions.py", line 19, in <module>
+    from .auxlib.logz import stringify
+  File "/work/ah702/miniconda3/lib/python3.13/site-packages/conda/auxlib/logz.py", line 6, in <module>
+    from ..common.serialize import json
+  File "/work/ah702/miniconda3/lib/python3.13/site-packages/conda/common/serialize/__init__.py", line 10, in <module>
+    from .json import CondaJSONEncoder, loads
+  File "/work/ah702/miniconda3/lib/python3.13/site-packages/conda/common/serialize/json.py", line 12, in <module>
+    from requests.compat import json
+  File "/work/ah702/miniconda3/lib/python3.13/site-packages/requests/__init__.py", line 45, in <module>
+    from .exceptions import RequestsDependencyWarning
+  File "/work/ah702/miniconda3/lib/python3.13/site-packages/requests/exceptions.py", line 7, in <module>
+    from urllib3.exceptions import HTTPError as BaseHTTPError
+ModuleNotFoundError: No module named 'urllib3.exceptions'
+python: can't open file '/work/ah702/YouTubeOlympics/scripts/label_with_llm_stream.py': [Errno 2] No such file or directory

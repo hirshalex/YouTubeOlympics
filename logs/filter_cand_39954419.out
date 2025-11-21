@@ -1,0 +1,3 @@
+2025-11-20T01:22:30.156571Z START streaming filter from data/processed/ALL_youtube_trending_data.parquet batch_size=2000
+2025-11-20T01:22:30.168714Z Using columns: ['title', 'tags', 'description', 'channelTitle']
+2025-11-20T01:22:33.240912Z ERROR in scanning loop: cannot process flags argument with a compiled pattern

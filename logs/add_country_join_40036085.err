@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/work/ah702/YouTubeOlympics/scripts/add_country_by_join.py", line 151, in <module>
+    main()
+  File "/work/ah702/YouTubeOlympics/scripts/add_country_by_join.py", line 148, in main
+    annotate_candidates(mapping, has_vid)
+  File "/work/ah702/YouTubeOlympics/scripts/add_country_by_join.py", line 136, in annotate_candidates
+    writer.write_table(new_batch)
+  File "/work/ah702/venvs/youtube_env/lib64/python3.9/site-packages/pyarrow/parquet/core.py", line 1166, in write_table
+    self.writer.write_table(table, row_group_size=row_group_size)
+TypeError: Argument 'table' has incorrect type (expected pyarrow.lib.Table, got pyarrow.lib.RecordBatch)

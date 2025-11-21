@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/work/ah702/YouTubeOlympics/scripts/add_country_by_join.py", line 151, in <module>
+    main()
+  File "/work/ah702/YouTubeOlympics/scripts/add_country_by_join.py", line 148, in main
+    annotate_candidates(mapping, has_vid)
+  File "/work/ah702/YouTubeOlympics/scripts/add_country_by_join.py", line 135, in annotate_candidates
+    writer = pq.ParquetWriter(args.out, new_batch.to_table().schema)
+AttributeError: 'pyarrow.lib.RecordBatch' object has no attribute 'to_table'

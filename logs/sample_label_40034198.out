@@ -1,0 +1,9 @@
+Stage 1: streaming candidates to build signature set and sample positives
+Candidates signatures: 120091
+Pos samples collected (approx): 500
+Stage 2: streaming ALL to sample negatives (skipping candidate signatures)
+Neg samples collected (approx): 5500
+Saving outputs...
+Wrote 500 rows to data/processed/sampled_pos.parquet
+Wrote 5500 rows to data/processed/sampled_neg.parquet
+Done.

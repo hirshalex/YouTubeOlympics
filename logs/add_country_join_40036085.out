@@ -1,0 +1,24 @@
+2025-11-20T20:50:50.214227Z Building mapping from ALL parquet: data/processed/ALL_youtube_trending_data.parquet
+2025-11-20T20:50:50.222444Z Schema has video_id=True, country_code=True, using columns=['video_id', 'country_code']
+2025-11-20T20:50:50.634157Z scanned 50000 rows, mapping size=7899
+2025-11-20T20:50:50.880997Z scanned 100000 rows, mapping size=15378
+2025-11-20T20:50:51.106784Z scanned 150000 rows, mapping size=23419
+2025-11-20T20:50:51.342643Z scanned 200000 rows, mapping size=30331
+2025-11-20T20:50:51.568022Z scanned 250000 rows, mapping size=37231
+2025-11-20T20:50:51.801891Z scanned 300000 rows, mapping size=45228
+2025-11-20T20:50:52.025669Z scanned 350000 rows, mapping size=53731
+2025-11-20T20:50:52.253660Z scanned 400000 rows, mapping size=63764
+2025-11-20T20:50:52.478188Z scanned 450000 rows, mapping size=73097
+2025-11-20T20:50:52.704272Z scanned 500000 rows, mapping size=81478
+2025-11-20T20:50:52.936858Z scanned 550000 rows, mapping size=89469
+2025-11-20T20:50:53.172571Z scanned 600000 rows, mapping size=98943
+2025-11-20T20:50:53.406983Z scanned 650000 rows, mapping size=107330
+2025-11-20T20:50:53.630341Z scanned 700000 rows, mapping size=114329
+2025-11-20T20:50:53.856415Z scanned 750000 rows, mapping size=121246
+2025-11-20T20:50:54.094853Z scanned 800000 rows, mapping size=127950
+2025-11-20T20:50:54.334575Z scanned 850000 rows, mapping size=136488
+2025-11-20T20:50:54.560651Z scanned 900000 rows, mapping size=144269
+2025-11-20T20:50:54.793766Z scanned 950000 rows, mapping size=153013
+2025-11-20T20:50:55.024996Z scanned 1000000 rows, mapping size=161931
+2025-11-20T20:51:03.215412Z Finished building mapping: total scanned=2905678, mapping size=488876
+2025-11-20T20:51:03.220148Z Annotating candidates file and writing output: data/processed/candidates_with_country.parquet

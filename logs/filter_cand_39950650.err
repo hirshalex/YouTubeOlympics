@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/work/ah702/YouTubeOlympics/scripts/filter_candidates_multilang.py", line 58, in <module>
+    main()
+  File "/work/ah702/YouTubeOlympics/scripts/filter_candidates_multilang.py", line 48, in main
+    mask = df.apply(lambda r: bool(pattern.search(combined_text(r))), axis=1)
+  File "/work/ah702/venvs/youtube_env/lib64/python3.9/site-packages/pandas/core/frame.py", line 10401, in apply
+    return op.apply().__finalize__(self, method="apply")
+  File "/work/ah702/venvs/youtube_env/lib64/python3.9/site-packages/pandas/core/apply.py", line 916, in apply
+    return self.apply_standard()
+  File "/work/ah702/venvs/youtube_env/lib64/python3.9/site-packages/pandas/core/apply.py", line 1063, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/work/ah702/venvs/youtube_env/lib64/python3.9/site-packages/pandas/core/apply.py", line 1081, in apply_series_generator
+    results[i] = self.func(v, *self.args, **self.kwargs)
+  File "/work/ah702/YouTubeOlympics/scripts/filter_candidates_multilang.py", line 48, in <lambda>
+    mask = df.apply(lambda r: bool(pattern.search(combined_text(r))), axis=1)
+TypeError: unhashable type: 'Series'

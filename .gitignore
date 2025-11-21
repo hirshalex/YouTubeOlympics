@@ -1,0 +1,8 @@
+# Don't upload large data or secrets
+data/raw/
+data/processed/
+models/
+outputs/
+*.zip
+*.json
+*.parquet

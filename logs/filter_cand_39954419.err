@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/work/ah702/YouTubeOlympics/scripts/filter_candidates_multilang.py", line 107, in <module>
+    main()
+  File "/work/ah702/YouTubeOlympics/scripts/filter_candidates_multilang.py", line 78, in main
+    mask = combined.str.contains(pattern, case=False, regex=True, na=False)
+  File "/work/ah702/venvs/youtube_env/lib64/python3.9/site-packages/pandas/core/strings/accessor.py", line 140, in wrapper
+    return func(self, *args, **kwargs)
+  File "/work/ah702/venvs/youtube_env/lib64/python3.9/site-packages/pandas/core/strings/accessor.py", line 1346, in contains
+    result = self._data.array._str_contains(pat, case, flags, na, regex)
+  File "/work/ah702/venvs/youtube_env/lib64/python3.9/site-packages/pandas/core/strings/object_array.py", line 145, in _str_contains
+    pat = re.compile(pat, flags=flags)
+  File "/usr/lib64/python3.9/re.py", line 252, in compile
+    return _compile(pattern, flags)
+  File "/usr/lib64/python3.9/re.py", line 299, in _compile
+    raise ValueError(
+ValueError: cannot process flags argument with a compiled pattern

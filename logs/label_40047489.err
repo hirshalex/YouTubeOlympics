@@ -1,0 +1,20 @@
+[2025-11-21T00:38:08.875885] Loading model Qwen/Qwen2.5-7B-Instruct
+[WARN] GPU/4bit load failed, falling back to CPU or non-quantized. Error: name 'torch' is not defined
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files:  25%|██▌       | 1/4 [00:22<01:06, 22.17s/it]Fetching 4 files: 100%|██████████| 4/4 [00:22<00:00,  5.54s/it]
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:07<00:21,  7.17s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:12<00:12,  6.15s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:17<00:05,  5.66s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:21<00:00,  5.11s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:21<00:00,  5.49s/it]
+[ERROR] Failed to load model/tokenizer: The model has been loaded with `accelerate` and therefore cannot be moved to a specific device. Please discard the `device` argument when creating your pipeline object.
+Traceback (most recent call last):
+  File "/work/ah702/YouTubeOlympics/scripts/label_with_llm.py", line 59, in <module>
+    args.model, trust_remote_code=True, device_map="auto",  torch_dtype=torch.float16,  low_cpu_mem_usage=True
+NameError: name 'torch' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/work/ah702/YouTubeOlympics/scripts/label_with_llm.py", line 68, in <module>
+    pipe = TextGenerationPipeline(model=model, tokenizer=tokenizer, device=-1)
+  File "/work/ah702/venvs/youtube_env/lib64/python3.9/site-packages/transformers/pipelines/text_generation.py", line 121, in __init__
+    super().__init__(*args, **kwargs)
+  File "/work/ah702/venvs/youtube_env/lib64/python3.9/site-packages/transformers/pipelines/base.py", line 981, in __init__
+    raise ValueError(
+ValueError: The model has been loaded with `accelerate` and therefore cannot be moved to a specific device. Please discard the `device` argument when creating your pipeline object.
