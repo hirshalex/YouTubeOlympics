@@ -16,5 +16,5 @@ Tags: music, official video
 
 Now label this video. Respond only with one JSON object and nothing else:
 
-Title: {title}
-Tags: {tags}
+Title: <<title>>
+Tags: <<tags>>
