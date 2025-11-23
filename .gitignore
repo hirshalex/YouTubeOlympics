@@ -1,7 +1,7 @@
 # Don't upload large data or secrets
 data/raw/
 data/processed/
-models/
+#models/
 outputs/
 *.zip
 *.json

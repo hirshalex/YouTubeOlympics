@@ -7,7 +7,8 @@ from sklearn.metrics import classification_report
 
 pos = pd.read_csv("data/processed/groq_labeled_sampled_pos.csv")
 neg = pd.read_csv("data/processed/groq_labeled_sampled_neg.csv")
-df = pd.concat([pos, neg], ignore_index=True)
+olympic = pd.read_csv("data/processed/groq_labeled_olympic_candidates.csv")
+df = pd.concat([pos, neg, olympic], ignore_index=True)
 df['text'] = df['title'].fillna("") + " " + df['tags'].fillna("") + " " + df['description'].fillna("")
 X_text = df['text'].tolist()
 y = df['label'].tolist()
